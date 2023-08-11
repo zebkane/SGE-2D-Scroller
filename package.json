@@ -1,0 +1,15 @@
+{
+  "name": "sge-2d-scroller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Zeb Kane (https://zebkane.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "simple-game-engine": "1.2.0"
+  }
+}
