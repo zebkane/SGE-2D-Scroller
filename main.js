@@ -59,7 +59,7 @@ player.add({
       // Using multiplication makes the player speed up as they fall
       player.pos.y *= game.gravity;
     } else if (player.isJumping == true) {
-      if (player.pos.y <= 200) {
+      if (player.pos.y <= 100) {
         player.isJumping = false;
       }
     } else {
@@ -73,14 +73,18 @@ player.add({
   value: function () {
     // Check if the space bar is pressed
     // && means and so this means if uparrow is pressed and the player is not jumping
-    if (game.key({ key: "arrowup" }) && player.isJumping == false) {
+    if (
+      game.key({ key: "arrowup" }) &&
+      player.isJumping == false &&
+      player.pos.y == game.h - player.s.h - 100
+    ) {
       // Set the player as jumping
       player.isJumping = true;
     }
 
     // Check to see if the player should be jumping
     if (player.isJumping == true) {
-      player.pos.y *= 0.95;
+      player.pos.y *= 0.98;
     }
   },
 });
@@ -91,7 +95,7 @@ for (let i = 0; i < 10; i++) {
   game.obstacles.push(
     new engine.Object({
       color: "red",
-      img: "https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/21ed6ebaa962e42.png",
+      img: "https://www.digitaltq.com/images/uploads/coromon/db/Froshell_potent.png",
       s: {
         w: 50,
         h: 50,
